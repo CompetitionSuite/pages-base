@@ -1,0 +1,109 @@
+<div class='container' style='padding: 30px 0;'>
+    <div class='row'>
+        <div class='col-sm-12'>
+            <div class='circuit-panel'>
+                <div class='circuit-panel__header'>
+                    {{group.name}}
+                </div>
+                <div class='circuit-panel__content'>
+                    {{#if group.location}}
+                    <div class='row'>
+                        <div class='col-sm-3'>
+                            <div>Location</div>
+                        </div>
+                        <div class='col-sm-9'>
+                            <div>{{group.location}}</div>
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{#if group.divisionName}}
+                    <div class='row'>
+                        <div class='col-sm-3'>
+                            <div>Division</div>
+                        </div>
+                        <div class='col-sm-9'>
+                            <div>{{group.divisionName}}</div>
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{#if group.showName}}
+                    <div class='row'>
+                        <div class='col-sm-3'>
+                            <div>Show Name</div>
+                        </div>
+                        <div class='col-sm-9'>
+                            <div>{{group.showName}}</div>
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{#if group.showDesc}}
+                    <div class='row'>
+                        <div class='col-sm-3'>
+                            <div>Show Description</div>
+                        </div>
+                        <div class='col-sm-9'>
+                            <div>{{group.showDesc}}</div>
+                        </div>
+                    </div>
+                    {{/if}}
+                    <div class='row' style='margin-top: 20px;'>
+                        <div class='col-sm-6'>
+                            <div class='circuit-panel__header'>
+                                Past Scores
+                            </div>
+                            <div style='margin-top: 20px;'>
+                                {{#unless group.pastEventList}}
+                                <div class='no-content'>
+                                    There are no past events!
+                                </div>
+                                {{/unless}}
+                                <div>
+                                    {{#each group.pastEventList}}
+                                    <div class='event-row' style='font-weight: bold; margin-top: 15px;'>{{name}}</div>
+                                    <table style='margin-left: 10px; width: 100%;'>
+                                        {{#each performances}}
+                                        <tr>
+                                            <td style='padding: 5px 0;'>{{eventName}} {{#if multipleCompetitions}} - {{competitionName}} {{/if}} <span style='font-style: italic; color: #999; font-size: 12px;'>({{competitionDate}})</span></td>
+                                            <td style='width: 50px;'>{{finalScore}}</td>
+                                            <td style='width: 25px;'>{{rank}}</td>
+                                            {{#if ../../site.allowRecaps}}
+                                            <td><a href='{{recapUrl}}'>Recap</a></td>
+                                            {{/if}}
+                                        </tr>
+                                        {{/each}}
+                                    </table>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-sm-6'>
+                            <div class='circuit-panel__header'>
+                                Upcoming Events
+                            </div>
+                            <div style='margin-top: 20px;'>
+                                {{#unless group.upcomingEventList}}
+                                <div class='no-content'>
+                                    There are no upcoming events!
+                                </div>
+                                {{/unless}}
+
+                                <div>
+                                    {{#each group.upcomingEventList}}
+                                    <div class='event-row'>{{name}}</div>
+                                    <table>
+                                        {{#each performances}}
+                                        <tr>
+                                            <td>{{eventName}}</td>
+                                        </tr>
+                                        {{/each}}
+                                    </table>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

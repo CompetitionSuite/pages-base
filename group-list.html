@@ -1,0 +1,64 @@
+<div class='container' style='padding: 30px 0;'>
+    <div class='row'>
+        <div class='col-sm-4'>
+            <div class='circuit-panel'>
+                <div class='circuit-panel__header'>
+                    Group Types
+                </div>
+                <div class='circuit-panel__content'>
+
+                    <ul class="nav nav-pills nav-stacked">
+                        {{#each groupTypeList}}
+                        <li role="presentation">
+                            <a href="#{{id}}">{{name}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+
+                    {{#unless groupTypeList}}
+                    <div class='no-content'>There are no types!</div>
+                    {{/unless}}
+                </div>
+            </div>
+        </div>
+        <div class='col-sm-8'>
+            <div class='circuit-panel'>
+                <div class='circuit-panel__header'>
+                    Groups
+                </div>
+                <div class='circuit-panel__content'>
+                    {{#each groupTypeList}}
+                    <div id="{{id}}" class='season-header'>
+                        {{name}}</div>
+                    <div class='season-list'>
+                        {{#each divisions}}
+                        {{#if groups}}
+                        <div style='font-weight: bold; margin: 30px 0 10px;'>{{name}}</div>
+                        <div style='margin-left: 10px; border-top: solid 1px #d0d0d0;'>
+                            {{#each groups}}
+                            <div class="clearfix event-row">
+                                <div class="pull-left">
+                                    <div class=''>
+                                        <a href='/groups/{{id}}'>
+                                            {{name}}
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="pull-right">
+                                    {{location}}
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                        {{/if}}
+                        {{/each}}
+                        <div class="back-to-top">
+                            <a href='#'>Back to Top</a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

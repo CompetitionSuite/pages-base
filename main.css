@@ -1,0 +1,202 @@
+body {
+    background-color: #3A3B44;
+}
+
+ul.menu-contact {
+    margin: 0;
+    padding: 10px;
+    list-style-type: none;
+    text-align: center;
+}
+
+ul.menu-contact li {
+    display: inline;
+    padding: 10px;
+    font-size: 12px;
+}
+
+ul.menu-contact li i.contact-icon {
+    margin-right: 5px;
+}
+
+ul.menu-contact li a
+{
+    color: #666;
+}
+
+ul.menu-contact li a:hover
+{
+    color: #900;
+}
+
+.main-menu {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.main-menu li {
+}
+
+.main-menu.nav > li > a {
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 30px;
+}
+
+.main-menu.nav>li>a:focus, .main-menu.nav>li>a:hover {
+    background-color: #C30819;
+}
+
+.main-content {
+    background-color: #E9E9E9;
+}
+
+.article-item {
+    padding: 20px 0;
+    border-top: solid 1px #D6D6D6;
+    margin-top: -1px;
+}
+
+.article-item--first {
+    border-top: none;
+    padding: 0;
+    margin-top: 0px;
+}
+
+.article-item .article-header {
+    color: #0C1DDC;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 50px;
+    border-bottom: solid 2px #FF0218;
+    white-space:nowrap;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.article-item .article-footer {
+    margin-top: 10px;
+}
+
+a, a:hover, a:focus {
+    color: #7913B4;
+}
+
+.circuit-panel {
+    background-color: #fff;
+    border: solid 1px #D6D6D6;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.circuit-panel--red {
+    background-color: #FB1021;
+}
+
+.circuit-panel__header {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    border-bottom: solid 2px #FF0218;
+    width: 40px;
+    white-space: nowrap;
+    position: relative;
+    z-index: 10;
+}
+
+.circuit-panel__header--red {
+    color: #fff;
+    border-color: #fff;
+}
+
+.circuit-panel__content {
+    padding: 20px 0;
+    border-top: solid 1px #D6D6D6;
+    margin-top: -1px;
+}
+
+.circuit-panel__content--border {
+
+}
+
+.circuit-panel__content--no-border {
+    border-top: 0px;
+}
+
+.event-item {
+    padding: 20px 0;
+    border-top: solid 1px #D6D6D6;
+    margin-top: -1px;
+}
+
+.event-item--no-border {
+    border-top: 0;
+}
+
+.event-item__name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: bold;
+}
+
+.event-item__link {
+    float: right;
+    font-weight: bold;
+}
+
+.footer-section__header {
+    text-transform: uppercase;
+    font-weight:bold;
+    color: #fff;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #494A52;
+    width: 50px;
+    white-space:nowrap;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.footer-section__content {
+    color: #B0B0B0;
+}
+
+.footer-section__item {
+    margin: 15px 0;
+}
+
+.footer-section__link, .footer-section__link:hover {
+    color: #B0B0B0;
+}
+
+.no-content {
+    font-style: italic;
+    color: #999;
+}
+
+
+.season-header {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.season-list {
+    border-top: solid 1px #d0d0d0;
+    margin-bottom: 20px;
+}
+
+.event-row {
+    padding: 10px 0;
+    border-bottom: solid 1px #d0d0d0;
+}
+
+.back-to-top {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 12px;
+}
+
+img {
+    max-width: 100%;
+}

@@ -1,0 +1,86 @@
+<div class='container' style='padding: 30px 0;'>
+    <div class='row'>
+        <div class='col-sm-9'>
+            <div class="circuit-panel">
+                <div class="circuit-panel__header">NEWS and UPDATES</div>
+                <div class="circuit-panel__content">
+                    {{#unless articleList}}
+                    <div style="margin-top: 20px; font-style: italic;">
+                        No news at this time... check back later!
+                    </div>
+                    {{/unless}}
+
+                    {{#each articleList}}
+                    <div class="media article-item {{#if @first}}article-item--first{{/if}}">
+                        {{#if thumbnail }}
+                        <div class="media-left">
+                            <img src="{{thumbnail}}" style='width: 50px;' alt='{{title}}' />
+                        </div>
+                        {{/if}}
+                        <div class="media-body">
+                            <div class="article-header">{{title}}</div>
+                            {{content}}
+                            <div class="article-footer"><a href="/{{url}}">Learn more...</a></div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <div class='col-sm-3'>
+            <div class="circuit-panel">
+                <div class="circuit-panel__header">
+                    Recent Events
+                </div>
+
+                <div class='circuit-panel__content'>
+                    {{#unless topPastEvents}}
+                    <div class='no-content'>
+                        There are no past events!
+                    </div>
+                    {{/unless}}
+
+                    {{#each topPastEvents}}
+                    <div class="clearfix event-item {{#if @first}} event-item--no-border {{/if}}">
+                        <div class="event-item__name">
+                            {{eventName}} {{#if competitionName}} - {{competitionName}}{{/if}}
+                        </div>
+                        <div class='pull-right'>
+                            <a href="/events/{{id}}">Scores</a>
+                            {{#if ../site.allowRecaps}}
+                            -
+                            <a href="{{recapUrl}}">Recap</a>
+                            {{/if}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="circuit-panel">
+                <div class="circuit-panel__header">
+                    Upcoming Events
+                </div>
+                <div class="circuit-panel__content">
+                    {{#unless topUpcomingEvents}}
+                    <div class='no-content'>
+                        There are no upcoming events!
+                    </div>
+                    {{/unless}}
+
+                    {{#each topUpcomingEvents}}
+                    <div class="clearfix event-item {{#if @first}} event-item--no-border {{/if}}">
+                        <div class="event-item__name">
+                            <a href='/events/{{id}}'>
+                                {{eventName}} {{#if competitionName}} - {{competitionName}}{{/if}}
+                            </a>
+                        </div>
+                        <div class='pull-right'>
+                            {{competitionDate}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div style="background-color: #fff;">
+    <div class='container'>
+        <div class='row'>
+            <div class='pull-left' style='font-size: 25px; margin-top: 7px; margin-bottom: 7px;'>
+                {{site.name}}
+            </div>
+            <div class='pull-right'>
+                <div>
+                    <ul class='pull-right menu-contact'>
+                        {{#if site.email }}
+                        <li><a href='mailto:{{site.email}}'><i class='fa fa-envelope contact-icon'></i>{{site.email}}</a></li>
+                        <li>|</li>
+                        {{/if}}
+                        {{#if site.phoneNumber }}
+                        <li><i class='fa fa-phone contact-icon'></i>{{site.phoneNumber}}</li>
+                        <li>|</li>
+                        {{/if}}
+                        {{# if site.facebook }}
+                        <li><a href='https://facebook.com/{{site.facebook}}'><i class='fa fa-facebook'></i></a></li>
+                        {{/if}}
+                        {{# if site.twitter }}
+                        <li><a href='https://twitter.com/{{site.twitter}}'><i class='fa fa-twitter'></i></a></li>
+                        {{/if}}
+                        {{# if site.instagram }}
+                        <li><a href='https://instagram.com/{{site.instagram}}'><i class='fa fa-instagram'></i></a></li>
+                        {{/if}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style='background-color: #FF0218; padding: 5px 0px;'>
+    <div class='container'>
+        <div class='row'>
+            <ul class='nav navbar-nav main-menu'>
+                <li><a href='/'>Home</a></li>
+                <li><a href='/scores'>Scores</a></li>
+                <li><a href='/events'>Events</a></li>
+                <li><a href='/groups'>Groups</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class='main-content'>

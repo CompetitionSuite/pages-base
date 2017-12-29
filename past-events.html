@@ -1,0 +1,74 @@
+<div class='container' style='padding: 30px 0;'>
+    <div class='row'>
+        <div class='col-sm-4'>
+            <div class='circuit-panel'>
+                <div class='circuit-panel__header'>
+                    Seasons
+                </div>
+                <div class='circuit-panel__content'>
+
+                    <ul class="nav nav-pills nav-stacked">
+                        {{#each seasonList}}
+                        <li role="presentation">
+                            <a href="#{{id}}">{{name}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+
+                    {{#unless seasonList}}
+                    <div class='no-content'>There are no seasons!</div>
+                    {{/unless}}
+                </div>
+            </div>
+        </div>
+        <div class='col-sm-8'>
+            <div class='circuit-panel'>
+                <div class='circuit-panel__header'>
+                    Past Events
+                </div>
+                <div class='circuit-panel__content'>
+                    {{#unless seasonList}}
+                    <div class='no-content'>
+                        There are no seasons!
+                    </div>
+                    {{/unless}}
+                    {{#each seasonList}}
+                    <div id="{{id}}" class='season-header'>
+                        {{name}}</div>
+                    <div class='season-list'>
+                        {{#each events}}
+                        {{#each competitions}}
+                        <div class="clearfix event-row">
+                            <div class="pull-left">
+                                <div class=''>
+                                    {{../name}}
+                                    {{#if name }}
+                                    - {{name}}
+                                    {{/if}}
+                                    <span style='color: #999; margin-left: 10px; font-size: 12px; font-style: italic;'>{{competitionDate}}</span>
+                                </div>
+                            </div>
+                            <div class="pull-right">
+                                <a href='/events/{{id}}'>
+                                    Scores
+                                </a>
+                                {{#if ../../../site.allowRecaps}}
+                                -
+                                <a href='{{recapUrl}}'>
+                                    Recap
+                                </a>
+                                {{/if}}
+                            </div>
+                        </div>
+                        {{/each}}
+                        {{/each}}
+                        <div class="back-to-top">
+                            <a href='#'>Back to Top</a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
