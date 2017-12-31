@@ -23,6 +23,27 @@
                             <div>{{competition.location}}</div>
                         </div>
                     </div>
+                    {{#if competition.publishSchedule}}
+                    <div class='row' style='margin-top: 20px;'>
+                        <div class='col-sm-12'>
+                            <div style='color: #fff; font-weight: bold; background-color: #1a2b6c; padding: 5px;'>
+                                Event Schedule
+                            </div>
+                            <div style='margin-top: 10px; padding: 5px;'>
+                            {{#each competition.competitions}}    
+                                <div style='text-align: center'>
+                                    {{#if standardScheduleUrl}}
+                                        <a class='btn btn-danger btn-lg' target='_blank' href='{{standardScheduleUrl}}'>Standard Schedule</a>
+                                    {{/if}}
+                                    {{#if logisticalScheduleUrl}}
+                                        <a class='btn btn-danger btn-lg' target='_blank' href='{{logisticalScheduleUrl}}'>Logistical Schedule</a>
+                                    {{/if}}
+                                </div>
+                            {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                    {{/if}}
                     {{/if}}
                     <div class='row' style='margin-top: 20px;'>
                         <div class='col-sm-12'>
